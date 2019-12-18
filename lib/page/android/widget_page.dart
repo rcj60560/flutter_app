@@ -109,6 +109,7 @@ class WidgetPage extends StatelessWidget {
                                             }),
                                       ]));
                         },
+                        //ios dialog
                         child: Text("cupertinodialog",
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(fontSize: 10))),
