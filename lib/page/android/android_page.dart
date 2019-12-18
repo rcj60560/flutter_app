@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/page/android/strag_page.dart';
 import 'package:flutter_app/page/android/trip_page.dart';
 
 import 'activity_page.dart';
-
 
 class Android extends StatefulWidget {
   @override
@@ -151,12 +151,11 @@ class AndroidState extends State<Android> {
                 ),
                 Expanded(
                   flex: 1,
-                  child: Container(
-                    margin: EdgeInsets.all(15),
-                    child: RaisedButton(
-                      onPressed: () {},
-                      child: Text("弹窗"),
-                    ),
+                  child: RaisedButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> new StragglePage()));
+                    },
+                    child: Text("瀑布流"),
                   ),
                 ),
               ],
