@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/page/android/strag_page.dart';
 import 'package:flutter_app/page/android/trip_page.dart';
 
+import 'BeautyPage1.dart';
 import 'activity_page.dart';
 
 class Android extends StatefulWidget {
@@ -153,9 +154,54 @@ class AndroidState extends State<Android> {
                   flex: 1,
                   child: RaisedButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> new StragglePage()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => new StragglePage()));
                     },
                     child: Text("瀑布流"),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: RaisedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => new BeautyPage1()));
+                    },
+                    child: Text("Flutter精美页面1"),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: RaisedButton(
+                    onPressed: () {
+                      print('test1');
+                    },
+                    child: Text("Flutter精美页面2"),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: RaisedButton(
+                    onPressed: () {
+                      print('test1');
+                    },
+                    child: Text("Flutter精美页面3"),
                   ),
                 ),
               ],
