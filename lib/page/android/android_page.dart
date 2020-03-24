@@ -170,6 +170,7 @@ class AndroidState extends State<Android> {
                   flex: 1,
                   child: RaisedButton(
                     onPressed: () {
+                      print("-----");
                       Navigator.push(
                           context,
                           MaterialPageRoute(
