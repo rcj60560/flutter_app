@@ -59,10 +59,7 @@ class TravelWidget extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                       child: Image.asset(
                         bean.url,
-                        width: MediaQuery
-                            .of(context)
-                            .size
-                            .width,
+                        width: MediaQuery.of(context).size.width,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -78,7 +75,7 @@ class TravelWidget extends StatelessWidget {
                           child: Text(
                             bean.name,
                             style:
-                            TextStyle(color: Colors.black54, fontSize: 18),
+                                TextStyle(color: Colors.black54, fontSize: 18),
                           ),
                         ),
                         Text(
