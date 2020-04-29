@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
   }
 }
 
-class HomepageSate extends State<HomePage> {
+class HomepageSate extends State<HomePage> with AutomaticKeepAliveClientMixin {
   List<BannerList> _bannerList = [];
   List<LocalNavList> _localNavList = [];
 
@@ -38,6 +38,7 @@ class HomepageSate extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    print('-------->');
     _getHomeModel();
   }
 
@@ -75,4 +76,7 @@ class HomepageSate extends State<HomePage> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

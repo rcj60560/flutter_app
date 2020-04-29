@@ -8,7 +8,7 @@ class TravelPage extends StatefulWidget {
   }
 }
 
-class TravelPageState extends State<TravelPage> {
+class TravelPageState extends State<TravelPage>  with AutomaticKeepAliveClientMixin{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,4 +17,7 @@ class TravelPageState extends State<TravelPage> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
