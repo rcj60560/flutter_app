@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/page/android/strag_page.dart';
 import 'package:flutter_app/page/android/trip_page.dart';
+import 'package:flutter_app/page/trip/main_page.dart';
 
 import 'BeautyPage1.dart';
 import 'activity_page.dart';
@@ -122,16 +123,17 @@ class AndroidState extends State<Android> {
                   child: Container(
                     margin: EdgeInsets.all(15),
                     child: Builder(
-                      builder: (context) => RaisedButton(
-                        child: Text("dialog"),
-                        onPressed: () {
-                          showAboutDialog(
-                              context: context,
-                              applicationIcon: Icon(Icons.home),
-                              applicationName: "name",
-                              applicationVersion: "1.0.0");
-                        },
-                      ),
+                      builder: (context) =>
+                          RaisedButton(
+                            child: Text("dialog"),
+                            onPressed: () {
+                              showAboutDialog(
+                                  context: context,
+                                  applicationIcon: Icon(Icons.home),
+                                  applicationName: "name",
+                                  applicationVersion: "1.0.0");
+                            },
+                          ),
                     ),
                   ),
                 ),
@@ -212,8 +214,11 @@ class AndroidState extends State<Android> {
                 Expanded(
                   flex: 1,
                   child: RaisedButton(
-                    onPressed: (){
-                      print('跳转到trip 页面');
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MainPage()));
                     },
                     child: Text("flutter trip"),
                   ),
