@@ -44,19 +44,19 @@ class BottomTabNavigatorState extends State<BottomTabNavigator> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            title: Text("Home"),
+            title: Text("首页"),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            title: Text("Search"),
+            title: Text("搜索"),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.card_travel),
-            title: Text("Travel"),
+            title: Text("旅拍"),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.face),
-            title: Text("Mine"),
+            title: Text("我的"),
           ),
         ],
         type: BottomNavigationBarType.fixed,
