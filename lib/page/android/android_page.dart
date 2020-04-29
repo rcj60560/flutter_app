@@ -206,6 +206,19 @@ class AndroidState extends State<Android> {
                   ),
                 ),
               ],
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: RaisedButton(
+                    onPressed: (){
+                      print('跳转到trip 页面');
+                    },
+                    child: Text("flutter trip"),
+                  ),
+                )
+              ],
             )
           ],
         ),
