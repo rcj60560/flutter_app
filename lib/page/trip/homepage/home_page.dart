@@ -4,6 +4,7 @@ import 'package:flutter_app/model/home_model.dart';
 import 'package:flutter_app/page/dao/home_dao.dart';
 import 'package:flutter_app/page/home/home_page.dart';
 import 'package:flutter_app/page/trip/model/home_model_new.dart';
+import 'package:flutter_app/page/trip/widget/grid_nav.dart';
 import 'package:flutter_app/page/trip/widget/local_nav.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
@@ -17,6 +18,7 @@ class HomePage extends StatefulWidget {
 class HomepageSate extends State<HomePage> with AutomaticKeepAliveClientMixin {
   List<BannerList> _bannerList = [];
   List<LocalNavList> _localNavList = [];
+  GridNav _gridNav;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +30,10 @@ class HomepageSate extends State<HomePage> with AutomaticKeepAliveClientMixin {
             Padding(
               padding: EdgeInsets.all(5),
               child: LocalNav(_localNavList),
+            ),
+            Padding(
+              padding: EdgeInsets.all(5),
+              child: GridNavItem(_gridNav),
             )
           ],
         ),
@@ -38,19 +44,21 @@ class HomepageSate extends State<HomePage> with AutomaticKeepAliveClientMixin {
   @override
   void initState() {
     super.initState();
-    print('-------->');
     _getHomeModel();
   }
 
-  Future<Null> _getHomeModel() async {
+  void _getHomeModel() async {
     HomeModelNew homeModel = await HomeDaoNew.fetch();
     setState(() {
       _bannerList = homeModel.bannerList;
       _localNavList = homeModel.localNavList;
+      _gridNav = homeModel.gridNav;
+
+      print('--->' );
     });
-    return null;
   }
 
+  //1. 首页顶部banner
   Widget get _banner {
     return Container(
       height: 160,
@@ -60,7 +68,7 @@ class HomepageSate extends State<HomePage> with AutomaticKeepAliveClientMixin {
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
             onTap: () {
-              print('----------->');
+              print('-----------> 跳转到其他页面');
             },
             child: Image.network(
               _bannerList[index].icon,
