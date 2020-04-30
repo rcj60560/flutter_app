@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/page/trip/model/home_model_new.dart';
 
 class GridNavItem extends StatelessWidget {
-  GridNav gridNav;
+  final GridNav gridNav;
 
   GridNavItem(this.gridNav);
 
