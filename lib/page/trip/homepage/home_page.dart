@@ -6,6 +6,7 @@ import 'package:flutter_app/page/home/home_page.dart';
 import 'package:flutter_app/page/trip/model/home_model_new.dart';
 import 'package:flutter_app/page/trip/widget/grid_nav.dart';
 import 'package:flutter_app/page/trip/widget/local_nav.dart';
+import 'package:flutter_app/page/trip/widget/sale_nav.dart';
 import 'package:flutter_app/page/trip/widget/sub_nav.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
@@ -21,6 +22,7 @@ class HomepageSate extends State<HomePage> with AutomaticKeepAliveClientMixin {
   List<LocalNavList> _localNavList = [];
   GridNav _gridNav;
   List<SubNavList> _subNavList = [];
+  SalesBox _saleBoxList;
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +43,10 @@ class HomepageSate extends State<HomePage> with AutomaticKeepAliveClientMixin {
             Padding(
               padding: EdgeInsets.all(5),
               child: SubNavItem(_subNavList),
+            ),
+            Padding(
+              padding: EdgeInsets.all(5),
+              child: SaleItem(_saleBoxList),
             )
           ],
         ),
@@ -61,6 +67,7 @@ class HomepageSate extends State<HomePage> with AutomaticKeepAliveClientMixin {
       _localNavList = homeModel.localNavList;
       _gridNav = homeModel.gridNav;
       _subNavList = homeModel.subNavList;
+      _saleBoxList = homeModel.salesBox;
       print('--->');
     });
   }
