@@ -77,7 +77,7 @@ class GridNavItem extends StatelessWidget {
               margin: EdgeInsets.only(top: 11),
               child: Text(
                 hotels.mainItem.title,
-                style: TextStyle(fontSize: 15),
+                style: TextStyle(fontSize: 15, color: Colors.white),
               ),
             )
           ],
@@ -92,12 +92,41 @@ class GridNavItem extends StatelessWidget {
     return Expanded(
       flex: 1,
       child: Container(
+        height: 88,
         decoration: BoxDecoration(
             gradient: LinearGradient(colors: [startColor, endColor])),
         child: Column(
           children: <Widget>[
-            Text(hotels.item1.title),
-            Text(hotels.item2.title),
+            Expanded(
+              child: FractionallySizedBox(
+                widthFactor: 1,
+                child: Container(
+                  child: Center(
+                    child: Text(
+                      hotels.item1.title,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              color: Colors.white,
+              height: 1,
+            ),
+            Expanded(
+              child: FractionallySizedBox(
+                widthFactor: 1,
+                child: Container(
+                  child: Center(
+                    child: Text(
+                      hotels.item2.title,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -109,7 +138,45 @@ class GridNavItem extends StatelessWidget {
     Color endColor = Color(int.parse('0xff' + hotels.endColor));
     return Expanded(
       flex: 1,
-      child: Text(hotels.item4.title),
+      child: Container(
+        height: 88,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(colors: [startColor, endColor])),
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: FractionallySizedBox(
+                widthFactor: 1,
+                child: Container(
+                  child: Center(
+                    child: Text(
+                      hotels.item3.title,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 1,
+              color: Colors.white,
+            ),
+            Expanded(
+              child: FractionallySizedBox(
+                widthFactor: 1,
+                child: Container(
+                  child: Center(
+                    child: Text(
+                      hotels.item4.title,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
