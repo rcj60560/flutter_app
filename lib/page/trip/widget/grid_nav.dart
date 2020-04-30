@@ -26,8 +26,13 @@ class GridNavItem extends StatelessWidget {
       item.add(_addItems(context, hotels));
     });
 
-    return Column(
-      children: item,
+    return PhysicalModel(
+      color: Colors.transparent,
+      borderRadius: BorderRadius.circular(8),
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        children: item,
+      ),
     );
   }
 
@@ -49,15 +54,31 @@ class GridNavItem extends StatelessWidget {
     return Expanded(
       flex: 1,
       child: Container(
+        height: 88,
+        margin: EdgeInsets.all(1),
         decoration: BoxDecoration(
             gradient: LinearGradient(colors: [startColor, endColor])),
         child: Stack(
           alignment: AlignmentDirectional.topCenter,
           children: <Widget>[
-            Image.network(hotels.mainItem.icon, width: 72, height: 121),
             Container(
-              margin: EdgeInsets.only(top: 5),
-              child: Text(hotels.mainItem.title),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(5))),
+              margin: EdgeInsets.only(bottom: 5),
+              child: Image.network(
+                hotels.mainItem.icon,
+                width: 88,
+                height: 121,
+                fit: BoxFit.contain,
+                alignment: AlignmentDirectional.bottomEnd,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 11),
+              child: Text(
+                hotels.mainItem.title,
+                style: TextStyle(fontSize: 15),
+              ),
             )
           ],
         ),
