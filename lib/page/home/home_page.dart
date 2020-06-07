@@ -20,7 +20,6 @@ class HomePageState extends State<HomePage> {
       new GlobalKey<EasyRefreshState>();
   List<HomeDatas> datas = new List();
   List<BannerData> bannerData = new List();
-  Map<String,String> map = new Map();
 
   ScrollController _scrollController = new ScrollController();
   bool isLoading = false;
