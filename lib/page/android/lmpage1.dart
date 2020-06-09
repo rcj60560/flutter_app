@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 
+/**
+ * 对齐方式  主轴 交叉轴
+ *
+ * mainAxisAlignment
+ *
+ * crossAxisAlignment
+ *
+ */
+
 class LMPage1 extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
