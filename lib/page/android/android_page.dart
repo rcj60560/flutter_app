@@ -5,6 +5,7 @@ import 'package:flutter_app/page/trip/main_page.dart';
 
 import 'BeautyPage1.dart';
 import 'activity_page.dart';
+import 'laomeng_page.dart';
 
 class Android extends StatefulWidget {
   @override
@@ -215,16 +216,28 @@ class AndroidState extends State<Android> {
                   flex: 1,
                   child: RaisedButton(
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => MainPage()));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => MainPage()));
                     },
                     child: Text("flutter trip"),
                   ),
                 )
               ],
-            )
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: RaisedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context, MaterialPageRoute(builder: (context) =>new LaoMengFlutter()));
+                    },
+                    child: Text("老孟flutter"),
+                  ),
+                )
+              ],
+            ),
           ],
         ),
       ),
